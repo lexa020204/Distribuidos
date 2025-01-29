@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\alexa\Documents\Ing-Sistemas-UPB\Octavo\Distribuidos\LaboratorioDos\.metadata\.plugins\org.eclipse.jdt.core
+3803894794.index
+1865797976.index
+2212067146.index
+3244704807.index

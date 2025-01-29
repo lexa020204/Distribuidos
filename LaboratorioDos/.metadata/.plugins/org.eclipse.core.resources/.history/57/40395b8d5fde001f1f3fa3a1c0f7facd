@@ -1,0 +1,5 @@
+package co.edu.up.classesclient.song;
+
+public interface InterfazSong {
+
+}
