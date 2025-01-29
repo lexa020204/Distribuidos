@@ -64,7 +64,7 @@ public class JSocketClient {
 		}
 	}
 	
-	public void closeService() {
+	publci void closeService() {
 		try {
 			this.ois.close();
 			this.oos.close();

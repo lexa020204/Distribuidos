@@ -1,0 +1,41 @@
+package co.edu.up.classesclient;
+
+import java.util.Scanner;
+
+public class Client {
+	
+	String opt;
+	String message;
+	JSocketClient sk;
+	
+	public Scanner sc;
+	
+
+	public Client(String address, int port) {
+		sk = new JSocketClient(address, port);	
+		sc = new Scanner(System.in);
+	}
+	
+	
+	
+	public void message() {
+		System.out.println(" [Cliente]: Escoge una opcion \n1. Enviar mensaje \n2. Cerra");
+		opt = sc.nextLine();
+		
+		if (opt== "1") {
+			System.out.println(" Ingrese un mesjae para enviar");
+			message = sc.nextLine();
+			sk.request(message);
+			
+		} else if (opt == "2") {
+			System.out.println("\n[Cliente]: Cerrando conexión...");
+            sk.closeService(); 
+			
+		}else {
+			System.out.println("[Cliente]: Opción no válida. Intente de nuevo.");
+		}
+		sc.close();
+	}
+	
+
+}

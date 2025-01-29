@@ -28,30 +28,26 @@ public class JSocketClient {
 
 	public void request(String data) {
 		try {
-			if(this.clientSk == null || this.clientSk.isClosed()) {
-				this.clientSk = new Socket(this.address, this.port);
-				this.oos = new ObjectOutputStream(this.clientSk.getOutputStream());
-				this.oos.flush();
-				this.ois = new ObjectInputStream(this.clientSk.getInputStream());
-				System.out.println("\n [Client]: Conexión exitosa.");
-			}
-			
+			this.clientSk = new Socket(this.address, this.port);
+			this.oos = new ObjectOutputStream(this.clientSk.getOutputStream());
+			this.oos.flush();
+			this.ois = new ObjectInputStream(this.clientSk.getInputStream());
+			System.out.println("\n [Client]: Conexión exitosa.");
 			send(data);
-			 {
+			while(true) {
 				try {
-					String response = (String) this.ois.readObject();
-					if (response == null) {
-						System.out.println("\n [Client]: El servidor cerro Conexión :(.");
+					data = (String) this.ois.readObject();
+					if (data == null) {
 						closeService();
 					} else {
-						System.out.println("\n [Client]: el servidor dice:" + response);
+						System.out.println("\n [Client]: el servidor dice:" + data);
 					}
 				} catch (Exception e) {
 					System.out.println("\n [Client]: No se puede recibir la data.");
 				}
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}		
 	}
 
@@ -64,7 +60,7 @@ public class JSocketClient {
 		}
 	}
 	
-	public void closeService() {
+	private void closeService() {
 		try {
 			this.ois.close();
 			this.oos.close();
