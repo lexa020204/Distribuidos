@@ -22,11 +22,9 @@ public class JSocketClient {
 			this.oos = null;
 			this.ois = null;
 		} catch (UnknownHostException e) {
-			System.err.println("[Client]: Error - Dirección desconocida: " + e.getMessage());
+			e.printStackTrace();
 		}
 	}
-	
-	
 
 	public void request(String data) {
 		try {
@@ -49,16 +47,13 @@ public class JSocketClient {
 						System.out.println("\n [Client]: el servidor dice:" + response);
 					}
 				} catch (Exception e) {
-					System.out.println("\n [Client]: El servidor cerro la conexión.");
+					System.out.println("\n [Client]: No se puede recibir la data.");
 				}
 			}
 		} catch (IOException e) {
-			System.err.println("[Client]: Error en la comunicación: " + e.getMessage());
-            closeService();
+			e.printStackTrace();
 		}		
 	}
-	
-	
 
 	private void send(String data) {
 		try {
@@ -69,13 +64,12 @@ public class JSocketClient {
 		}
 	}
 	
-	
-	
 	public void closeService() {
 		try {
-			if (this.ois != null) this.ois.close();
-            if (this.oos != null) this.oos.close();
-            if (this.clientSk != null) this.clientSk.close();
+			this.ois.close();
+			this.oos.close();
+			this.clientSk.close();
+			System.out.println("\n [Client]: Conexión terminada.");
 		} catch (Exception e) {
 			System.out.println("\n [Client]: No se puede cerrar la conexión.");
 		}

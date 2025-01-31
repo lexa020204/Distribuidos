@@ -78,10 +78,7 @@ public class JSocketServer {
 	
 	private void send(String data) {
 		try {
-			if (this.oos != null) {
-                this.oos.writeObject("[Server]: " + data);
-                this.oos.flush();
-            }
+			System.out.println("\n [Server]: " + "Conexión exitosa.");
 			
 		} catch (Exception e) {
 			System.out.println("\n [Server]: No se puede enviar la data.");
