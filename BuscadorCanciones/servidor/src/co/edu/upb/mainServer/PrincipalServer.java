@@ -1,23 +1,14 @@
 package co.edu.upb.mainServer;
 
-import java.util.List;
-
-import co.edu.upb.cancion.Song;
+import co.edu.upb.servidorCancion.Server;
 
 public class PrincipalServer {
 	
 	public static void main(String[] args) {
-        
-        Song song = new Song("", "", "", "", 0); 
-
-        
-        List<Song> taylorSwiftSongs = song.getByComposer("Taylor Swift");
-
-   
-        System.out.println("Canciones de Taylor Swift:");
-        for (Song taylorSong : taylorSwiftSongs) {
-            System.out.println(taylorSong);  // 
-        }
-    }
+		Server server = new Server(60);
+		server.run();
+	}
 
 }
+
+

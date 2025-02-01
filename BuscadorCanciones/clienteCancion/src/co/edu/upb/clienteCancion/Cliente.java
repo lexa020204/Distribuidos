@@ -11,7 +11,7 @@ public class Cliente {
 	String message;
 	public Scanner sc;
 	 JSocketClient sk;
-	private String[] opciones = {"", "Autor", "Género", "Nombre"};
+	private String[] opciones = {"", "Nombre", "Género", "Autor"};
 	
 	public Cliente(String address, int port) {
 	     sc = new Scanner(System.in);

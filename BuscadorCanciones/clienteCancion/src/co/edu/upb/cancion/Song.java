@@ -13,7 +13,6 @@ public class Song implements Serializable{
 	public String language;
 	public int year;
 	
-	private List<Song> songs = SongDatabase.getAllSongs();
 	
 	
 	public Song(String title,
@@ -34,33 +33,20 @@ public class Song implements Serializable{
     }
 
 	public List<Song> getByComposer(String composer) {
-		List<Song> result = new ArrayList<>();
 		
-		for (Song song : songs) {
-			if (song.composer.equalsIgnoreCase(composer))
-				result.add(song);
-		}
-		return result;
+		return null;
 	}
 
 	public List<Song> getByTitle(String tittle) {
-		List<Song> result = new ArrayList<>();
-		
-		for (Song song : songs) {
-			if (song.title.equalsIgnoreCase(tittle))
-				result.add(song);
-		}
-		return result;
+
+		return null;
 	}
 
 	public List<Song> getBygender(String gender) {
-List<Song> result = new ArrayList<>();
+
 		
-		for (Song song : songs) {
-			if (song.gender.equalsIgnoreCase(gender))
-				result.add(song);
-		}
-		return result;
+	
+		return null;
 	}
 }
 	

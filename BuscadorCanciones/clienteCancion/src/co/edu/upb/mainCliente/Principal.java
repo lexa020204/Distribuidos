@@ -7,7 +7,6 @@ public class Principal {
 		
 		Cliente cliente = new Cliente("127.0.0.1", 60);
         
-        
     	cliente.buscador();
     }
 	

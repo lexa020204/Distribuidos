@@ -1,10 +1,12 @@
 package co.edu.upb.clienteCancion;
 import java.io.IOException;
+import co.edu.upb.cancion.Song;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.List;
 
 public class JSocketClient {
 	
@@ -41,13 +43,19 @@ public class JSocketClient {
 
 	            // Recibimos la respuesta del servidor
 	            try {
-	                String response = (String) this.ois.readObject();
-	                if (response == null) {
-	                    System.out.println("\n [Client]: El servidor cerró la conexión.");
+	                Object response =  this.ois.readObject();
+	                if (response instanceof String ) {
+	                	 String strResponse = (String) response;
+	                    System.out.println("\n [Client]: " +  strResponse);
 	                    closeService();
 	                } else {
+	                	@SuppressWarnings("unchecked")
+						List<Song> songs = (List<Song>) response;
 	                	
-	                    System.out.println("\n [Client]: Las canciones son las siguientes: \n" + response);
+	                    System.out.println("\n [Client]: Las canciones son las siguientes: \n");
+	                    for (Song song : songs) {
+	                        System.out.println(song.toString());
+	                    }
 	                }
 	            } catch (Exception e) {
 	                System.out.println("\n [Client]: El servidor cerró la conexión.");
@@ -60,7 +68,8 @@ public class JSocketClient {
 	   
 	   private void send(String data) {
 	        try {
-	            this.oos.writeObject("[Client]: Buscando canción: " + data);
+	        	System.out.println("[Client]: Buscando canción........."  );
+	            this.oos.writeObject(data);
 	            this.oos.flush();
 	        } catch (Exception e) {
 	            System.out.println("\n [Client]: No se puede enviar la data.");
