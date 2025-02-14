@@ -1,20 +1,19 @@
+import co.edu.upb.pdfConverter.Threads;
+import co.edu.upb.pdfConverter.URL;
+import co.edu.upb.pdfConverter.URlsRepository;
 import co.edu.upb.pdfConverter.UrlPDFConverter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> urls= List.of(
-                "https://archiveofourown.org/works/63072403",
-                "https://archiveofourown.org/works/63072385"
-        );
-
+       URlsRepository repo = new URlsRepository();
+        List<URL> urls = repo.getURLs();
+        Threads threads = new Threads(urls);
         try{
-            UrlPDFConverter converter = new UrlPDFConverter();
-            List<String> resultados = converter.convertUrlsPdf(urls);
-            System.out.println("Archivos PDF generados:");
-            resultados.forEach(System.out::println);
+           threads.star();
         }
         catch (IOException | InterruptedException e){
             e.printStackTrace();
