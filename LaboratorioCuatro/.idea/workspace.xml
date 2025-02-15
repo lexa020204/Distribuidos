@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e31391c-1d9e-4ec5-8586-ba5e86b5c5af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../LaboratorioCAINCO/src/co/edu/upb/pdfConverter/DocPdfConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/upb/pdfConverter/Threads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/upb/pdfConverter/Threads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/upb/pdfConverter/URlsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/upb/pdfConverter/URlsRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
