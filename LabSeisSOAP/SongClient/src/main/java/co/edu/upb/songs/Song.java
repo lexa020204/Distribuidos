@@ -1,15 +1,13 @@
 package co.edu.upb.songs;
-
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 import java.io.Serializable;
 
-
 @XmlRootElement(name = "song")
 @XmlType(propOrder = {"title", "gender", "composer", "language", "year"})
-public class Song implements Serializable {
+public class Song implements Serializable{
     private static final long serialVersionUID = 1L;
     private String title;
     private String gender;
@@ -77,6 +75,4 @@ public class Song implements Serializable {
     public void setYear(int year) {
         this.year = year;
     }
-
-
 }

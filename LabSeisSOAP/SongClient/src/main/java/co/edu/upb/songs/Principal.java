@@ -1,6 +1,4 @@
 package co.edu.upb.songs;
-
-
 import java.net.MalformedURLException;
 
 public class Principal {
@@ -13,7 +11,7 @@ public class Principal {
             soapClient.buscador();
 
 
-        }catch (MalformedURLException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
