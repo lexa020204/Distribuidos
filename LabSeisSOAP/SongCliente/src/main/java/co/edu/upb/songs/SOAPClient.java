@@ -1,4 +1,4 @@
-package co.edu.upb.song;
+package co.edu.upb.songs;
 
 import jakarta.xml.ws.Service;
 
@@ -22,8 +22,8 @@ public class SOAPClient {
 
         URL wsdlURL = new URL("http://localhost:80/song?wsdl");
 
-        QName servQName = new QName("http://song.upb.edu.co/", "SongService");
-        QName portQName = new QName("http://song.upb.edu.co/", "SongPort");
+        QName servQName = new QName("http://songs.upb.edu.co/", "SongService");
+        QName portQName = new QName("http://songs.upb.edu.co/", "SongPort");
 
         Service soapService = Service.create(wsdlURL, servQName);
         service = soapService.getPort(portQName, InterfaceSong.class);

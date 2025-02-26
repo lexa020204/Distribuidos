@@ -1,4 +1,4 @@
-package co.edu.upb.song;
+package co.edu.upb.songs;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;

@@ -1,4 +1,4 @@
-package co.edu.upb.song;
+package co.edu.upb.songs;
 
 
 import java.net.MalformedURLException;
