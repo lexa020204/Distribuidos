@@ -20,6 +20,7 @@ public class Cliente {
 	
 	public void buscador() {
 		while(true) {
+			
 			System.out.println("\n[Cliente]: Escoge una opción");
 			 System.out.println("1. Nombre");
 	         System.out.println("2. Género");
